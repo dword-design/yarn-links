@@ -1,5 +1,7 @@
 import getPackageNames from '.'
-import { forIn } from '@functions'
+import { forIn, consoleLog } from '@functions'
 
-getPackageNames()
-  .then(forIn(packageName => console.log(packageName)))
+(async () => getPackageNames()
+  |> await
+  |> forIn(consoleLog)
+)()
