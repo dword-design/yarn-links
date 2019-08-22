@@ -1,14 +1,19 @@
 {
   "name": "@dword-design/yarn-links",
-  "version": "0.1.0",
-  "main": "index.js",
+  "version": "0.1.1",
+  "main": "dist/index.js",
+  "bin": {
+    "yarn-links": "./dist/cli.js"
+  },
+  "files": [
+    "dist/cli.js"
+  ],
   "repository": "git@github.com:dword-design/yarn-links.git",
   "author": "Sebastian Landwehr <info@dword-design.de>",
   "license": "MIT",
   "dependencies": {
     "fs-extra": "^8.1.0",
     "glob-promise": "^3.4.0",
-    "lodash": "^4.17.15",
     "user-home": "^2.0.0"
   },
   "devDependencies": {
