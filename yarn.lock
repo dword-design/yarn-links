@@ -740,10 +740,10 @@
     webpack-merge "^4.2.2"
     webpack-node-externals "^1.7.2"
 
-"@dword-design/base@^0.11.2":
-  version "0.11.2"
-  resolved "https://registry.yarnpkg.com/@dword-design/base/-/base-0.11.2.tgz#e1352c85eae84a7f1313fe20273e4bb29cbc3254"
-  integrity sha512-6D1OcOBlk1vlEUSC8vr8yZWXJlGHOKBzgzgiOvq64m+ngoLLFy29MUdCvotF7WM69FH1omKFcAtE0sbFNLVUAA==
+"@dword-design/base@^0.11.3":
+  version "0.11.3"
+  resolved "https://registry.yarnpkg.com/@dword-design/base/-/base-0.11.3.tgz#5707a5103b9626d7e67378249b22f7ed833d71be"
+  integrity sha512-QbfcGbxXBxBRYmKBIUSy2Vscfz3ZeP4lc28oGVOhaC15M//tM1jVw5/u/WKQhnUqImalaxAoEdqdgsLgBwnbcA==
   dependencies:
     "@babel/cli" "^7.5.5"
     "@babel/core" "^7.5.5"
@@ -3196,9 +3196,9 @@ eslint-plugin-import@^2.18.2:
     resolve "^1.11.0"
 
 eslint-plugin-jest@^22.16.0:
-  version "22.16.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-jest/-/eslint-plugin-jest-22.16.0.tgz#30c4e0e9dc331beb2e7369b70dd1363690c1ce05"
-  integrity sha512-eBtSCDhO1k7g3sULX/fuRK+upFQ7s548rrBtxDyM1fSoY7dTWp/wICjrJcDZKVsW7tsFfH22SG+ZaxG5BZodIg==
+  version "22.17.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-jest/-/eslint-plugin-jest-22.17.0.tgz#dc170ec8369cd1bff9c5dd8589344e3f73c88cf6"
+  integrity sha512-WT4DP4RoGBhIQjv+5D0FM20fAdAUstfYAf/mkufLNTojsfgzc5/IYW22cIg/Q4QBavAZsROQlqppiWDpFZDS8Q==
   dependencies:
     "@typescript-eslint/experimental-utils" "^1.13.0"
 
@@ -3214,9 +3214,9 @@ eslint-plugin-lodash-fp@^2.2.0-a1:
     req-all "^1.0.0"
 
 eslint-plugin-prefer-arrow@^1.1.5:
-  version "1.1.5"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-prefer-arrow/-/eslint-plugin-prefer-arrow-1.1.5.tgz#ad2b91b126eb208547da7af9e9719b3598a5a063"
-  integrity sha512-vjwd/I3R0jjMbzjMxaekzHz5/ohTLparvxtW5f/7tAXvM8h4/z/C4HR6l7qv5e0JnYRSTfyzad0OiJxlnI1bBw==
+  version "1.1.6"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-prefer-arrow/-/eslint-plugin-prefer-arrow-1.1.6.tgz#1fbf92b441ece684da9a849f980c67125d886c43"
+  integrity sha512-CT7a5pT6SG9hvhCjyHKFA1+lClB4WA+gvBt04E7/buUTELgatneCrublqTzi++tZuCefUhJXrTm3W1wpK14sqg==
 
 eslint-plugin-react@^7.14.3:
   version "7.14.3"
@@ -5610,9 +5610,9 @@ log-update@^2.3.0:
     wrap-ansi "^3.0.1"
 
 loglevel@^1.6.3:
-  version "1.6.3"
-  resolved "https://registry.yarnpkg.com/loglevel/-/loglevel-1.6.3.tgz#77f2eb64be55a404c9fd04ad16d57c1d6d6b1280"
-  integrity sha512-LoEDv5pgpvWgPF4kNYuIp0qqSJVWak/dML0RY74xlzMZiT9w77teNAwKYKWBTYjlokMirg+o3jBwp+vlLrcfAA==
+  version "1.6.4"
+  resolved "https://registry.yarnpkg.com/loglevel/-/loglevel-1.6.4.tgz#f408f4f006db8354d0577dcf6d33485b3cb90d56"
+  integrity sha512-p0b6mOGKcGa+7nnmKbpzR6qloPbrgLcnio++E+14Vo/XffOGwZtRpUhr8dTH/x2oCMmEoIU0Zwm3ZauhvYD17g==
 
 loose-envify@^1.0.0, loose-envify@^1.4.0:
   version "1.4.0"
