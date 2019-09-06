@@ -720,18 +720,20 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
-"@dword-design/base-type-lib@^0.3.1":
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/@dword-design/base-type-lib/-/base-type-lib-0.3.1.tgz#22e2f4ac6e665825afbe357dcbd9c0f144a24de4"
-  integrity sha512-BnbXQodOAIHhW0D2XjySzR+Hi8+sYdZRjRaDuBECCFR/tn7J4H+2jLlHuVHJwIAxAdq4ioJa6ojvlbkxkBdAvg==
+"@dword-design/base-type-lib@^0.3.2":
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/@dword-design/base-type-lib/-/base-type-lib-0.3.2.tgz#1c6a07a47488f52ac8ee9ca9ec78f29b46a87f25"
+  integrity sha512-7x4LlNgYKt8CMcOpTk8iGWJ7gdXWTxLnHv+jdfJOvQCN+rFLkUoWt3G283MG4NoJwGDgufV9Z50daicy6Nd/kw==
   dependencies:
     "@babel/core" "^7.5.5"
     "@dword-design/node-env" "^0.1.0"
     "@dword-design/webpack-runner" "^0.2.1"
     babel-loader "^8.0.6"
+    child-process-promise "^2.2.1"
     clean-webpack-plugin "^3.0.0"
     eslint "^6.2.2"
     eslint-loader "^3.0.0"
+    fs-extra "^8.1.0"
     lodash "^4.17.15"
     resolve-from "^5.0.0"
     safe-require "^1.0.3"
@@ -740,10 +742,10 @@
     webpack-merge "^4.2.2"
     webpack-node-externals "^1.7.2"
 
-"@dword-design/base@^0.11.3":
-  version "0.11.3"
-  resolved "https://registry.yarnpkg.com/@dword-design/base/-/base-0.11.3.tgz#5707a5103b9626d7e67378249b22f7ed833d71be"
-  integrity sha512-QbfcGbxXBxBRYmKBIUSy2Vscfz3ZeP4lc28oGVOhaC15M//tM1jVw5/u/WKQhnUqImalaxAoEdqdgsLgBwnbcA==
+"@dword-design/base@^0.11.4":
+  version "0.11.4"
+  resolved "https://registry.yarnpkg.com/@dword-design/base/-/base-0.11.4.tgz#100092380aa6b0a024f41712ee2a0b79d4917999"
+  integrity sha512-3sfunswj+6/OKrGMRrNKUgD6OZ2C2B9fuwkzKrBOC6i1yIzvTQtjueUrGcbw2yQD6er4FEzTIP/UFbmZCSUEFw==
   dependencies:
     "@babel/cli" "^7.5.5"
     "@babel/core" "^7.5.5"
@@ -753,7 +755,7 @@
     "@babel/plugin-proposal-pipeline-operator" "^7.5.0"
     "@babel/preset-env" "^7.5.5"
     "@babel/register" "^7.5.5"
-    "@dword-design/base-type-lib" "^0.3.1"
+    "@dword-design/base-type-lib" "^0.3.2"
     "@dword-design/functions" "^0.4.4"
     "@dword-design/yes-sir" "^0.1.1"
     "@epegzz/sass-vars-loader" dword-design/sass-vars-loader#fork
@@ -2628,11 +2630,6 @@ date-now@^0.1.4:
   resolved "https://registry.yarnpkg.com/date-now/-/date-now-0.1.4.tgz#eaf439fd4d4848ad74e5cc7dbef200672b9e345b"
   integrity sha1-6vQ5/U1ISK105cx9vvIAZyueNFs=
 
-de-indent@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/de-indent/-/de-indent-1.0.2.tgz#b2038e846dc33baa5796128d0804b455b8c1e21d"
-  integrity sha1-sgOOhG3DO6pXlhKNCAS0VbjB4h0=
-
 debug@2.6.9, debug@^2.2.0, debug@^2.3.3, debug@^2.6.8, debug@^2.6.9:
   version "2.6.9"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.9.tgz#5d128515df134ff327e90a4c93f4e077a536341f"
@@ -2793,15 +2790,12 @@ depcheck@dword-design/depcheck#fork:
     lodash "^4.17.11"
     minimatch "^3.0.2"
     node-sass-tilde-importer "^1.0.2"
-    pkg-up "^3.1.0"
     please-upgrade-node "^3.1.1"
     require-from-string "^2.0.2"
     require-package-name "^2.0.1"
     resolve "^1.10.0"
-    resolve-from "^5.0.0"
-    vue-template-compiler "^2.6.10"
-    walkdir "^0.3.2"
-    yargs "^13.2.2"
+    walkdir "0.0.12"
+    yargs "^12.0.1"
 
 depd@~1.1.2:
   version "1.1.2"
@@ -4162,11 +4156,6 @@ hash.js@^1.0.0, hash.js@^1.0.3:
   dependencies:
     inherits "^2.0.3"
     minimalistic-assert "^1.0.1"
-
-he@^1.1.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/he/-/he-1.2.0.tgz#84ae65fa7eafb165fddb61566ae14baf05664f0f"
-  integrity sha512-F/1DnUGPopORZi0ni+CvrCgHQ5FyEAHRLSApuYWMmrbSwoN2Mn/7k+Gl38gJnR7yyDZk6WLXwiGod1JOWNDKGw==
 
 header-case@^1.0.0:
   version "1.0.1"
@@ -6846,13 +6835,6 @@ pkg-up@^2.0.0:
   dependencies:
     find-up "^2.1.0"
 
-pkg-up@^3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/pkg-up/-/pkg-up-3.1.0.tgz#100ec235cc150e4fd42519412596a28512a0def5"
-  integrity sha512-nDywThFk1i4BQK4twPQ6TA4RT8bDY96yeuCVBWL3ePARCiEKDRSrNGbFIgUJpLp+XeIR65v8ra7WuJOFUBtkMA==
-  dependencies:
-    find-up "^3.0.0"
-
 please-upgrade-node@^3.1.1:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/please-upgrade-node/-/please-upgrade-node-3.2.0.tgz#aeddd3f994c933e4ad98b99d9a556efa0e2fe942"
@@ -8811,14 +8793,6 @@ vue-eslint-parser@^5.0.0:
     esquery "^1.0.1"
     lodash "^4.17.11"
 
-vue-template-compiler@^2.6.10:
-  version "2.6.10"
-  resolved "https://registry.yarnpkg.com/vue-template-compiler/-/vue-template-compiler-2.6.10.tgz#323b4f3495f04faa3503337a82f5d6507799c9cc"
-  integrity sha512-jVZkw4/I/HT5ZMvRnhv78okGusqe0+qH2A0Em0Cp8aq78+NK9TII263CDVz2QXZsIT+yyV/gZc/j/vlwa+Epyg==
-  dependencies:
-    de-indent "^1.0.2"
-    he "^1.1.0"
-
 w3c-hr-time@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/w3c-hr-time/-/w3c-hr-time-1.0.1.tgz#82ac2bff63d950ea9e3189a58a65625fedf19045"
@@ -8826,10 +8800,10 @@ w3c-hr-time@^1.0.1:
   dependencies:
     browser-process-hrtime "^0.1.2"
 
-walkdir@^0.3.2:
-  version "0.3.2"
-  resolved "https://registry.yarnpkg.com/walkdir/-/walkdir-0.3.2.tgz#ac8437a288c295656848ebc19981ebc677a5f590"
-  integrity sha512-0Twghia4Z5wDGDYWURlhZmI47GvERMCsXIu0QZWVVZyW9ZjpbbZvD9Zy9M6cWiQQRRbAcYajIyKNavaZZDt1Uw==
+walkdir@0.0.12:
+  version "0.0.12"
+  resolved "https://registry.yarnpkg.com/walkdir/-/walkdir-0.0.12.tgz#2f24f1ade64aab1e458591d4442c8868356e9281"
+  integrity sha512-HFhaD4mMWPzFSqhpyDG48KDdrjfn409YQuVW7ckZYhW4sE87mYtWifdB/+73RA7+p4s4K18n5Jfx1kHthE1gBw==
 
 walker@^1.0.7, walker@~1.0.5:
   version "1.0.7"
@@ -9193,7 +9167,7 @@ yargs-parser@^5.0.0:
   dependencies:
     camelcase "^3.0.0"
 
-yargs@12.0.5:
+yargs@12.0.5, yargs@^12.0.1:
   version "12.0.5"
   resolved "https://registry.yarnpkg.com/yargs/-/yargs-12.0.5.tgz#05f5997b609647b64f66b81e3b4b10a368e7ad13"
   integrity sha512-Lhz8TLaYnxq/2ObqHDql8dX8CJi97oHxrjUcYtzKbbykPtVW9WB+poxI+NM2UIzsMgNCZTIf0AQwsjK5yMAqZw==
@@ -9211,7 +9185,7 @@ yargs@12.0.5:
     y18n "^3.2.1 || ^4.0.0"
     yargs-parser "^11.1.1"
 
-yargs@^13.2.2, yargs@^13.3.0:
+yargs@^13.3.0:
   version "13.3.0"
   resolved "https://registry.yarnpkg.com/yargs/-/yargs-13.3.0.tgz#4c657a55e07e5f2cf947f8a366567c04a0dedc83"
   integrity sha512-2eehun/8ALW8TLoIl7MVaRUrg+yCnenu8B4kBlRxj3GJGDKU1Og7sMXPNm1BYyM1DOJmTZ4YeN/Nwxv+8XJsUA==
