@@ -742,10 +742,10 @@
     webpack-merge "^4.2.2"
     webpack-node-externals "^1.7.2"
 
-"@dword-design/base@^0.11.4":
-  version "0.11.4"
-  resolved "https://registry.yarnpkg.com/@dword-design/base/-/base-0.11.4.tgz#100092380aa6b0a024f41712ee2a0b79d4917999"
-  integrity sha512-3sfunswj+6/OKrGMRrNKUgD6OZ2C2B9fuwkzKrBOC6i1yIzvTQtjueUrGcbw2yQD6er4FEzTIP/UFbmZCSUEFw==
+"@dword-design/base@^0.11.5":
+  version "0.11.5"
+  resolved "https://registry.yarnpkg.com/@dword-design/base/-/base-0.11.5.tgz#9e0caf5604751f8e4581e294d04706cc077b55ed"
+  integrity sha512-9kBWT63mBswBMDMQR6oi8LgF4gpO35Feb4NE2EVEdpzH9aGAWxLSgwpw+qq0dpwLW56uoUlxQ21V/IxuGz7lXQ==
   dependencies:
     "@babel/cli" "^7.5.5"
     "@babel/core" "^7.5.5"
@@ -757,6 +757,7 @@
     "@babel/register" "^7.5.5"
     "@dword-design/base-type-lib" "^0.3.2"
     "@dword-design/functions" "^0.4.4"
+    "@dword-design/jest-expect-fp" "^0.1.0"
     "@dword-design/yes-sir" "^0.1.1"
     "@epegzz/sass-vars-loader" dword-design/sass-vars-loader#fork
     babel-eslint "^11.0.0-beta.0"
@@ -802,6 +803,11 @@
   dependencies:
     lodash "^4.17.11"
     tinycolor2 "^1.4.1"
+
+"@dword-design/jest-expect-fp@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@dword-design/jest-expect-fp/-/jest-expect-fp-0.1.0.tgz#68567260a502b5cf4de30d3f44925c15b0d790af"
+  integrity sha512-xeTGnONKjMa/b5zZxnv7Ep0jeodZb3lC3f4AR2EQUjOsjkkUMjTZYoN1lHfGMobRKQMbOhmBKACjhW3am4wFpw==
 
 "@dword-design/node-env@^0.1.0":
   version "0.1.0"

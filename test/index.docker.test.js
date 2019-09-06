@@ -1,10 +1,9 @@
 import api from '../src'
 import userHome from 'user-home'
 import { writeToFile, spawn } from '@lib'
+import { expectToEqual } from '@test'
 
 jest.setTimeout(10000)
-
-const expectToEqual = right => left => expect(left).toEqual(right)
 
 test('empty', async () => undefined
   |> api
