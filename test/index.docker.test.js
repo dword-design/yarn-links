@@ -1,9 +1,8 @@
-import api from '../src'
+import api from '../dist'
 import userHome from 'user-home'
-import { writeToFile, spawn } from '@lib'
+import { writeToFile, spawn, removeFile } from '@lib'
 import { expectToEqual } from '@test'
-
-jest.setTimeout(10000)
+import { resolve } from 'path'
 
 test('empty', async () => undefined
   |> api
@@ -12,15 +11,20 @@ test('empty', async () => undefined
 )
 
 test('two links', async () => undefined
-  |> ('{ "name": "package-a" }' |> writeToFile(`${userHome}/package-a/package.json`))
-  |> await
-  |> spawn('yarn link', { cwd: `${userHome}/package-a` })
-  |> await
-  |> ('{ "name": "@vendor/package-b" }' |> writeToFile(`${userHome}/package-b/package.json`))
-  |> await
-  |> spawn('yarn link', { cwd: `${userHome}/package-b` })
-  |> await
-  |> api
-  |> await
+  |> ('{ "name": "package-a" }' |> writeToFile(resolve(userHome, 'package-a/package.json'))) |> await
+  |> spawn('yarn link', { cwd: resolve(userHome, 'package-a') }) |> await
+  |> ('{ "name": "@vendor/package-b" }' |> writeToFile(resolve(userHome, 'package-b/package.json'))) |> await
+  |> spawn('yarn link', { cwd: resolve(userHome, 'package-b') }) |> await
+  |> api |> await
   |> expectToEqual(['@vendor/package-b', 'package-a'])
+  |> () => Promise.all([
+    (async () => undefined
+      |> spawn('yarn unlink', { cwd: resolve(userHome, 'package-a') }) |> await
+      |> (resolve(userHome, 'package-a') |> removeFile)
+    )(),
+    (async () => undefined
+      |> spawn('yarn unlink', { cwd: resolve(userHome, 'package-b') }) |> await
+      |> (resolve(userHome, 'package-b') |> removeFile)
+    )(),
+  ])
 )

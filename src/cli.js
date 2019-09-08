@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import getPackageNames from '.'
 import { forIn, consoleLog } from '@functions'
 
