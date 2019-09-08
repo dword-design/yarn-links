@@ -5,8 +5,7 @@ import { expectToEqual } from '@test'
 import { resolve } from 'path'
 
 test('empty', async () => undefined
-  |> api
-  |> await
+  |> api |> await
   |> expectToEqual([])
 )
 
