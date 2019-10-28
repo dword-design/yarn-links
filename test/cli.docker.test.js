@@ -1,28 +1,31 @@
 import userHome from 'user-home'
-import { writeToFile, removeFile, spawn } from '@lib'
-import { expectToEqual } from '@test'
-import { resolve } from 'path'
+import P from 'path'
+import { spawn } from 'child-process-promise'
+import { removeFile } from 'fs-extra'
+import outputFiles from 'output-files'
 
-test('empty', async () => undefined
-  |> spawn(require.resolve('../dist/cli'), { capture: ['stdout'] }) |> await
-  |> ({ stdout }) => stdout |> expectToEqual('')
-)
+test('empty', async () => {
+  const { stdout } = await spawn('yarn-links', { capture: ['stdout'] })
+  expect(stdout).toEqual('')
+})
 
-test('two links', async () => undefined
-  |> ('{ "name": "package-a" }' |> writeToFile(`${userHome}/package-a/package.json`)) |> await
-  |> spawn('yarn link', { cwd: `${userHome}/package-a` }) |> await
-  |> ('{ "name": "@vendor/package-b" }' |> writeToFile(`${userHome}/package-b/package.json`)) |> await
-  |> spawn('yarn link', { cwd: `${userHome}/package-b` }) |> await
-  |> spawn(require.resolve('../dist/cli'), { capture: ['stdout'] }) |> await
-  |> ({ stdout }) => stdout |> expectToEqual('@vendor/package-b\npackage-a\n')
-  |> () => Promise.all([
-    (async () => undefined
-      |> spawn('yarn unlink', { cwd: resolve(userHome, 'package-a') }) |> await
-      |> (resolve(userHome, 'package-a') |> removeFile)
-    )(),
-    (async () => undefined
-      |> spawn('yarn unlink', { cwd: resolve(userHome, 'package-b') }) |> await
-      |> (resolve(userHome, 'package-b') |> removeFile)
-    )(),
+test('two links', async () => {
+  await outputFiles(userHome, {
+    'package-a/package.json': JSON.stringify({ name: 'package-a' }),
+    'package-b/package.json': JSON.stringify({ name: '@vendor/package-b' }),
+  })
+  await spawn('yarn', 'link', { cwd: `${userHome}/package-a` })
+  await spawn('yarn', 'link', { cwd: `${userHome}/package-b` })
+  const { stdout } = await spawn('yarn-links', { capture: ['stdout'] })
+  expect(stdout).toEqual('@vendor/package-b\npackage-a\n')
+  await Promise.all([
+    (async () => {
+      await spawn('yarn', 'unlink', { cwd: P.resolve(userHome, 'package-a') })
+      await removeFile(P.resolve(userHome, 'package-a'))
+    })(),
+    (async () => {
+      await spawn('yarn', 'unlink', { cwd: P.resolve(userHome, 'package-b') })
+      await removeFile(P.resolve(userHome, 'package-b'))
+    })(),
   ])
-)
+})

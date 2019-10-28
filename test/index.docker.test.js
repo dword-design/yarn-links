@@ -1,29 +1,28 @@
-import api from '../dist'
+import yarnLinks from '@dword-design/yarn-links'
 import userHome from 'user-home'
-import { writeToFile, spawn, removeFile } from '@lib'
-import { expectToEqual } from '@test'
-import { resolve } from 'path'
+import P from 'path'
+import outputFiles from 'output-files'
+import { spawn } from 'child-process-promise'
+import { removeFile } from 'fs-extra'
 
-test('empty', async () => undefined
-  |> api |> await
-  |> expectToEqual([])
-)
+test('empty', async () => expect(await yarnLinks()).toEqual([]))
 
-test('two links', async () => undefined
-  |> ('{ "name": "package-a" }' |> writeToFile(resolve(userHome, 'package-a/package.json'))) |> await
-  |> spawn('yarn link', { cwd: resolve(userHome, 'package-a') }) |> await
-  |> ('{ "name": "@vendor/package-b" }' |> writeToFile(resolve(userHome, 'package-b/package.json'))) |> await
-  |> spawn('yarn link', { cwd: resolve(userHome, 'package-b') }) |> await
-  |> api |> await
-  |> expectToEqual(['@vendor/package-b', 'package-a'])
-  |> () => Promise.all([
-    (async () => undefined
-      |> spawn('yarn unlink', { cwd: resolve(userHome, 'package-a') }) |> await
-      |> (resolve(userHome, 'package-a') |> removeFile)
-    )(),
-    (async () => undefined
-      |> spawn('yarn unlink', { cwd: resolve(userHome, 'package-b') }) |> await
-      |> (resolve(userHome, 'package-b') |> removeFile)
-    )(),
+test('two links', async () => {
+  await outputFiles(userHome, {
+    'package-a/package.json': JSON.stringify({ name: 'package-a' }),
+    'package-b/package.json': JSON.stringify({ name: '@vendor/package-b' }),
+  })
+  await spawn('yarn', 'link', { cwd: `${userHome}/package-a` })
+  await spawn('yarn', 'link', { cwd: `${userHome}/package-b` })
+  expect(await yarnLinks()).toEqual('@vendor/package-b\npackage-a\n')
+  await Promise.all([
+    (async () => {
+      await spawn('yarn', 'unlink', { cwd: P.resolve(userHome, 'package-a') })
+      await removeFile(P.resolve(userHome, 'package-a'))
+    })(),
+    (async () => {
+      await spawn('yarn', 'unlink', { cwd: P.resolve(userHome, 'package-b') })
+      await removeFile(P.resolve(userHome, 'package-b'))
+    })(),
   ])
-)
+})
