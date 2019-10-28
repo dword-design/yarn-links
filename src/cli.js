@@ -1,9 +1,6 @@
 #!/usr/bin/env node
 
-import getPackageNames from '.'
-import { forIn, consoleLog } from '@functions'
+import yarnLinks from '@dword-design/yarn-links'
+import { forIn, unary } from '@functions'
 
-(async () => getPackageNames()
-  |> await
-  |> forIn(consoleLog)
-)()
+(async () => yarnLinks() |> await |> forIn(unary(console.log)))()
