@@ -1,6 +1,6 @@
 {
   "name": "@dword-design/yarn-links",
-  "version": "0.1.12",
+  "version": "0.1.13",
   "main": "dist/index.js",
   "bin": {
     "yarn-links": "./dist/cli.js"
@@ -21,7 +21,7 @@
     "yarn-config-directory": "^1.0.2"
   },
   "devDependencies": {
-    "@dword-design/base-node": "^0.1.12",
+    "@dword-design/base-node": "^0.1.13",
     "child-process-promise": "^2.2.1",
     "output-files": "^1.1.2",
     "user-home": "^2.0.0"

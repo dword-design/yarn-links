@@ -710,10 +710,10 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@dword-design/base-node@^0.1.12":
-  version "0.1.12"
-  resolved "https://registry.yarnpkg.com/@dword-design/base-node/-/base-node-0.1.12.tgz#51f2ed811ee22ff4d57224ccd1622fb0c47c8cbc"
-  integrity sha512-cCOi0y0DlIMpaogXl4MAIXW5WcDVnTzgyWDFGlV4FRbeo1+VCaBzQQP6gwW3nFpb+qzwJ4rwDNfHiKyaKTpF5w==
+"@dword-design/base-node@^0.1.13":
+  version "0.1.13"
+  resolved "https://registry.yarnpkg.com/@dword-design/base-node/-/base-node-0.1.13.tgz#98d1fdfd6fbdc69b86cb3edd18c31121b5629922"
+  integrity sha512-Edkjhl8+bOSUC+xKfQrOidNimPiDxqN09M2KWNwqWsLHjnaGqCzvu/VpE3QmIY7Q2EAUs0GpHyqwiuBG1ivuDA==
   dependencies:
     "@babel/cli" "^7.6.4"
     "@babel/core" "^7.6.4"
@@ -1509,12 +1509,15 @@ depcheck@dword-design/depcheck#fork:
     lodash "^4.17.11"
     minimatch "^3.0.2"
     node-sass-tilde-importer "^1.0.2"
+    pkg-up "^3.1.0"
     please-upgrade-node "^3.1.1"
     require-from-string "^2.0.2"
     require-package-name "^2.0.1"
     resolve "^1.10.0"
-    walkdir "0.0.12"
-    yargs "^12.0.1"
+    resolve-from "^5.0.0"
+    vue-template-compiler "^2.6.10"
+    walkdir "^0.3.2"
+    yargs "^13.2.2"
 
 deprecate@^1.0.0:
   version "1.1.1"
