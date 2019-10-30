@@ -1,7 +1,7 @@
 import userHome from 'user-home'
 import P from 'path'
-import { spawn } from 'child-process-promise'
-import { remove } from 'fs-extra'
+import { spawn } from 'child_process'
+import { remove } from 'fs'
 import outputFiles from 'output-files'
 
 describe('cli', () => {

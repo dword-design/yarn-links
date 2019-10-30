@@ -2,8 +2,8 @@ import yarnLinks from '@dword-design/yarn-links'
 import userHome from 'user-home'
 import P from 'path'
 import outputFiles from 'output-files'
-import { spawn } from 'child-process-promise'
-import { remove } from 'fs-extra'
+import { spawn } from 'child_process'
+import { remove } from 'fs'
 
 describe('index', () => {
 
