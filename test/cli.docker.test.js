@@ -33,5 +33,5 @@ describe('cli', () => {
         })(),
       ])
     }
-  }).timeout(5000)
+  }).timeout(8000)
 })

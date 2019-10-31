@@ -30,5 +30,5 @@ describe('index', () => {
         })(),
       ])
     }
-  }).timeout(5000)
+  }).timeout(8000)
 })
