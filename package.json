@@ -1,16 +1,27 @@
 {
-  "name": "@dword-design/yarn-links",
-  "version": "1.0.1",
+  "name": "yarn-links",
+  "version": "1.0.0",
   "main": "dist/index.js",
   "bin": {
     "yarn-links": "./dist/cli.js"
   },
   "files": [
-    "dist/cli.js"
+    "dist"
   ],
   "repository": "https://github.com/dword-design/yarn-links",
   "author": "Sebastian Landwehr <info@dword-design.de>",
   "license": "MIT",
+  "description": "This package outputs all linked yarn packages via the CLI or via an exported function.",
+  "preferGlobal": true,
+  "keywords": [
+    "api",
+    "cli",
+    "command",
+    "config",
+    "global",
+    "link",
+    "yarn"
+  ],
   "scripts": {
     "prepare": "base-node prepare",
     "test": "is-docker && base-node test"

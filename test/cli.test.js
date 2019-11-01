@@ -20,7 +20,7 @@ describe('cli', () => {
     await spawn('yarn', ['link'], { cwd: `${userHome}/package-b` })
     try {
       const { stdout } = await spawn('yarn-links', [], { capture: ['stdout'] })
-      expect(stdout).toEqual('@vendor/package-b\npackage-a\n')
+      expect(stdout).toEqual('  - @vendor/package-b\n  - package-a\n')
     } finally {
       await Promise.all([
         (async () => {

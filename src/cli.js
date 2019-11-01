@@ -1,6 +1,11 @@
 #!/usr/bin/env node
 
-import yarnLinks from '@dword-design/yarn-links'
-import { forIn, unary } from '@functions'
+import api from '.'
+import { map, join } from '@functions'
 
-(async () => yarnLinks() |> await |> forIn(unary(console.log)))()
+(async () => {
+  const links = await api()
+  if (links.length > 0) {
+    console.log(links |> map(link => `  - ${link}`) |> join('\n'))
+  }
+})()

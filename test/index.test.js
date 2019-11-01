@@ -1,4 +1,4 @@
-import yarnLinks from '@dword-design/yarn-links'
+import api from 'yarn-links'
 import userHome from 'user-home'
 import P from 'path'
 import outputFiles from 'output-files'
@@ -7,7 +7,7 @@ import { remove } from 'fs'
 
 describe('index', () => {
 
-  it('empty', async () => expect(await yarnLinks()).toEqual([]))
+  it('empty', async () => expect(await api()).toEqual([]))
 
   it('two links', async () => {
     await outputFiles(userHome, {
@@ -17,7 +17,7 @@ describe('index', () => {
     await spawn('yarn', ['link'], { cwd: `${userHome}/package-a` })
     await spawn('yarn', ['link'], { cwd: `${userHome}/package-b` })
     try {
-      expect(await yarnLinks()).toEqual(['@vendor/package-b', 'package-a'])
+      expect(await api()).toEqual(['@vendor/package-b', 'package-a'])
     } finally {
       await Promise.all([
         (async () => {
