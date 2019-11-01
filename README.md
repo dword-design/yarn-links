@@ -26,8 +26,8 @@ yarn global add yarn-links
 
 ```bash
 $ yarn-links
-- http-server
-- npm-name-cli
+  - http-server
+  - npm-name-cli
 ```
 
 ## API Usage
