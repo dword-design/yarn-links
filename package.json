@@ -1,6 +1,6 @@
 {
   "name": "yarn-links",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "dist/index.js",
   "bin": {
     "yarn-links": "./dist/cli.js"
@@ -24,7 +24,7 @@
   ],
   "scripts": {
     "prepare": "base-node prepare",
-    "test": "(is-ci || is-docker) && base-node test"
+    "test": "( is-ci || is-docker ) && base-node test"
   },
   "dependencies": {
     "glob-promise": "^3.4.0",
