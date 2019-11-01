@@ -1,6 +1,6 @@
 {
   "name": "yarn-links",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "dist/index.js",
   "bin": {
     "yarn-links": "./dist/cli.js"
@@ -24,7 +24,7 @@
   ],
   "scripts": {
     "prepare": "base-node prepare",
-    "test": "is-docker && base-node test"
+    "test": "(is-ci || is-docker) && base-node test"
   },
   "dependencies": {
     "glob-promise": "^3.4.0",
@@ -32,6 +32,7 @@
   },
   "devDependencies": {
     "@dword-design/base-node": "^0.4.1",
+    "is-ci": "^2.0.0",
     "is-docker": "dword-design/is-docker#fork",
     "output-files": "^1.1.3",
     "user-home": "^2.0.0"
