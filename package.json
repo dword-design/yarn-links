@@ -32,6 +32,7 @@
   },
   "devDependencies": {
     "@dword-design/base-node": "^0.4.1",
+    "expect": "^24.9.0",
     "is-ci": "^2.0.0",
     "is-docker": "dword-design/is-docker#fork",
     "output-files": "^1.1.3",
