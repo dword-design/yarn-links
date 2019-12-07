@@ -2759,6 +2759,11 @@ is-fullwidth-code-point@^3.0.0:
   resolved "https://registry.yarnpkg.com/is-fullwidth-code-point/-/is-fullwidth-code-point-3.0.0.tgz#f116f8064fe90b3f7844a38997c0b75051269f1d"
   integrity sha512-zymm5+u+sCsSWyD9qNaejV3DFvhCKclKdizYaJUuHA83RLjb7nSuGnddCHGv0hk+KY7BMAlsWeK4Ueg6EV6XQg==
 
+is-gitpod@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/is-gitpod/-/is-gitpod-1.0.1.tgz#e08ecd7e6ffa96e6dfbc9a51c69a262531e87cd8"
+  integrity sha512-NIl7spV3vOItCeKz5Dfq/ZgKypvrYczD6Ip7+FXzwZqyuqlF3k9kC3nawoAoJ0qnV3iwVPw3V/FVWWwYaBWvOg==
+
 is-glob@^2.0.0:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/is-glob/-/is-glob-2.0.1.tgz#d096f926a3ded5600f3fdfd91198cb0888c2d863"
