@@ -2,8 +2,8 @@ import api from 'yarn-links'
 import userHome from 'user-home'
 import { resolve } from 'path'
 import outputFiles from 'output-files'
-import { spawn } from 'child_process'
-import { remove } from 'fs'
+import { spawn } from 'child-process-promise'
+import { remove } from 'fs-extra'
 import expect from 'expect'
 
 export const it = async () => {
