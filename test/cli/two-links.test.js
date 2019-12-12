@@ -1,6 +1,6 @@
 import userHome from 'user-home'
-import { spawn } from 'child_process'
-import { remove } from 'fs'
+import { spawn } from 'child-process-promise'
+import { remove } from 'fs-extra'
 import outputFiles from 'output-files'
 import { resolve } from 'path'
 import expect from 'expect'

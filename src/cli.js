@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import api from '.'
-import { map, join } from '@functions'
+import { map, join } from '@dword-design/functions'
 
 (async () => {
   const links = await api()

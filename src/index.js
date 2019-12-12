@@ -1,6 +1,6 @@
 import glob from 'glob-promise'
-import { readJson, realpath, lstat } from 'fs'
-import { map, unary, promiseAll, filterAsync } from '@functions'
+import { readJson, realpath, lstat } from 'fs-extra'
+import { map, unary, promiseAll, filterAsync } from '@dword-design/functions'
 import P from 'path'
 import getYarnPrefix from 'yarn-config-directory'
 
