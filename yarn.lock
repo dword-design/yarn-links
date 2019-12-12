@@ -1360,6 +1360,7 @@ chardet@^0.7.0:
 
 chdir@dword-design/node-chdir#fork:
   version "0.0.0"
+  uid "55004473579e2b8d293ced5410af5948793971b6"
   resolved "https://codeload.github.com/dword-design/node-chdir/tar.gz/55004473579e2b8d293ced5410af5948793971b6"
 
 child-process-promise@^2.2.1:
@@ -1728,6 +1729,7 @@ delegates@^1.0.0:
 
 depcheck@dword-design/depcheck#fork:
   version "0.0.1"
+  uid c26892d97de67e476566ece801a046dbd718f21b
   resolved "https://codeload.github.com/dword-design/depcheck/tar.gz/c26892d97de67e476566ece801a046dbd718f21b"
   dependencies:
     "@babel/parser" "^7.6.4"
@@ -2776,6 +2778,7 @@ is-descriptor@^1.0.0, is-descriptor@^1.0.2:
 
 is-docker@dword-design/is-docker#fork:
   version "2.0.0"
+  uid "81c117c7a1d7bdf2dc8c3fb105e86b70cdcadbf4"
   resolved "https://codeload.github.com/dword-design/is-docker/tar.gz/81c117c7a1d7bdf2dc8c3fb105e86b70cdcadbf4"
 
 is-extendable@^0.1.0, is-extendable@^0.1.1:
@@ -2818,9 +2821,11 @@ is-fullwidth-code-point@^3.0.0:
   integrity sha512-zymm5+u+sCsSWyD9qNaejV3DFvhCKclKdizYaJUuHA83RLjb7nSuGnddCHGv0hk+KY7BMAlsWeK4Ueg6EV6XQg==
 
 is-gitpod@^1.0.1:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/is-gitpod/-/is-gitpod-1.0.3.tgz#89d1b68803f06de0936caeec3b01d1e7bc3b2044"
-  integrity sha512-LgZZd10Ixt1CpPrZzUqroVH1uHzJc4949edEKhIzk7HUeT58Kx6Hrgo41ja3G++YoU7TfuEwJ5Lj/UBxGSvNfw==
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/is-gitpod/-/is-gitpod-1.0.4.tgz#da6df96f59dbc1650c61201fa541c485f75cdbab"
+  integrity sha512-PSl/HdeUlCK+oDGLS5dfdqePmsrsqgV9E/p9DandOD3SjIw9ryMC5glPZJvEQvEcbs7A86j9qO5EwHBvNeog1A==
+  dependencies:
+    child-process-promise "^2.2.1"
 
 is-glob@^2.0.0:
   version "2.0.1"
