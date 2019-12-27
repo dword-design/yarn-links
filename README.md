@@ -37,7 +37,8 @@ This package outputs all linked yarn packages via the CLI or via an exported fun
 <ul>
 <li>Install: <code>npm install --save yarn-links</code></li>
 <li>Executable: <code>npx yarn-links</code></li>
-<li>Require: <code>require('yarn-links')</code></li>
+<li>Import: <code>import * as pkg from ('yarn-links')</code></li>
+<li>Require: <code>const pkg = require('yarn-links')</code></li>
 </ul>
 
 <!-- /INSTALL -->
