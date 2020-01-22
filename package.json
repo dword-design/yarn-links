@@ -35,7 +35,7 @@
   "devDependencies": {
     "@dword-design/base": "^4.0.0",
     "child-process-promise": "^2.2.1",
-    "expect": "^24.9.0",
+    "expect": "^25.0.0",
     "is-ci": "^2.0.0",
     "is-docker": "dword-design/is-docker#fork",
     "is-gitpod": "^1.0.1",
