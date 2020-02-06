@@ -4,9 +4,8 @@ import { resolve } from 'path'
 import outputFiles from 'output-files'
 import { spawn } from 'child-process-promise'
 import { remove } from 'fs-extra'
-import expect from 'expect'
 
-export const it = async () => {
+export default async () => {
   await outputFiles(userHome, {
     'package-a/package.json': JSON.stringify({ name: 'package-a' }),
     'package-b/package.json': JSON.stringify({ name: '@vendor/package-b' }),
@@ -28,5 +27,3 @@ export const it = async () => {
     ])
   }
 }
-
-export const timeout = 8000
