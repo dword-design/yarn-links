@@ -825,9 +825,9 @@
     safe-require "^1.0.3"
 
 "@dword-design/base@^5.2.0":
-  version "5.2.0"
-  resolved "https://registry.yarnpkg.com/@dword-design/base/-/base-5.2.0.tgz#7e9c0d4a996d8eb5be68939611aee40a50af8ff3"
-  integrity sha512-Wfrb2dmsP+8jFygr2XTXxSjqsaLkDhfFl1hVW/lumFZe3Ddd3ef0WD6yYscIiH8OpMiGAw+tkLyaLu+Zj9G1ew==
+  version "5.2.2"
+  resolved "https://registry.yarnpkg.com/@dword-design/base/-/base-5.2.2.tgz#008346c8f0f9483caabff45465433a71600f6a26"
+  integrity sha512-0OY4j23BXWx3d5kPrGi88S1GqOj0ptZjJrNOUWedXrgIL8djxhuUlhqaiZhW6wJa4eiFeISQaEWE1vSC/I7NUA==
   dependencies:
     "@babel/core" "^7.6.4"
     "@babel/register" "^7.6.2"
@@ -838,6 +838,7 @@
     "@dword-design/functions" "^2.2.2"
     "@dword-design/is-workspace-root" "^1.0.1"
     "@dword-design/require-hook-test" "^1.0.0"
+    "@qawolf/ci-info" "^2.1.0"
     ajv-cli "^3.0.0"
     child-process-promise "^2.2.1"
     depcheck dword-design/depcheck#fork
@@ -849,7 +850,6 @@
     glob-promise "^3.4.0"
     hosted-git-info "^3.0.2"
     ignore "^5.1.4"
-    is-ci "^2.0.0"
     is-docker "^2.0.0"
     is-gitpod "^1.0.7"
     make-cli "^1.0.9"
@@ -1137,6 +1137,11 @@
   dependencies:
     "@nodelib/fs.scandir" "2.1.3"
     fastq "^1.6.0"
+
+"@qawolf/ci-info@^2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@qawolf/ci-info/-/ci-info-2.1.0.tgz#c7253f6cc208f9af1e4d5ad56e8419aa1d7856d8"
+  integrity sha512-D5H5RjqqE+YxI2oeTgSRuIjdy/hli90H5mMd81bBrYlOfB/f4TBsKMoaWfzI5E4bmFzLfQJuvvepTaWrxVfBug==
 
 "@types/color-name@^1.1.1":
   version "1.1.1"
