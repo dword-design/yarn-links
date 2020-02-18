@@ -1,50 +1,36 @@
 <!-- TITLE/ -->
-
-<h1>yarn-links</h1>
-
+# yarn-links
 <!-- /TITLE -->
 
-
 <!-- BADGES/ -->
+[![NPM version](https://img.shields.io/npm/v/yarn-links.svg)](https://npmjs.org/package/yarn-links)
+![Linux macOS Windows compatible](https://img.shields.io/badge/os-linux%20%7C%C2%A0macos%20%7C%C2%A0windows-blue)
 
-<span class="badge-npmversion"><a href="https://npmjs.org/package/yarn-links" title="View this project on NPM"><img src="https://img.shields.io/npm/v/yarn-links.svg" alt="NPM version" /></a></span>
-<span class="badge-travisci"><a href="http://travis-ci.org/dword-design/yarn-links" title="Check this project's build status on TravisCI"><img src="https://img.shields.io/travis/dword-design/yarn-links/master.svg" alt="Travis CI Build Status" /></a></span>
-<span class="badge-coveralls"><a href="https://coveralls.io/r/dword-design/yarn-links" title="View this project's coverage on Coveralls"><img src="https://img.shields.io/coveralls/dword-design/yarn-links.svg" alt="Coveralls Coverage Status" /></a></span>
-<span class="badge-daviddm"><a href="https://david-dm.org/dword-design/yarn-links" title="View the status of this project's dependencies on DavidDM"><img src="https://img.shields.io/david/dword-design/yarn-links.svg" alt="Dependency Status" /></a></span>
-<span class="badge-shields"><a href="https://img.shields.io/badge/renovate-enabled-brightgreen.svg"><img src="https://img.shields.io/badge/renovate-enabled-brightgreen.svg" /></a></span>
+[![Build status](https://img.shields.io/github/workflow/status/dword-design/yarn-links/build)](https://github.com/dword-design/yarn-links/actions)
+[![Coverage status](https://img.shields.io/coveralls/dword-design/yarn-links)](https://coveralls.io/github/dword-design/yarn-links)
+[![Dependency status](https://img.shields.io/david/dword-design/yarn-links)](https://david-dm.org/dword-design/yarn-links)
+![Renovate enabled](https://img.shields.io/badge/renovate-enabled-brightgreen)
 
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/dword-design/yarn-links)
 <!-- /BADGES -->
 
-
 <!-- DESCRIPTION/ -->
-
 This package outputs all linked yarn packages via the CLI or via an exported function.
-
 <!-- /DESCRIPTION -->
 
-
 <!-- INSTALL/ -->
+# Install
 
-<h2>Install</h2>
+```bash
+# NPM
+$ npm install yarn-links
 
-<a href="https://npmjs.com" title="npm is a package manager for javascript"><h3>npm</h3></a>
-<h4>Install Globally</h4>
-<ul>
-<li>Install: <code>npm install --global yarn-links</code></li>
-<li>Executable: <code>yarn-links</code></li>
-</ul>
-<h4>Install Locally</h4>
-<ul>
-<li>Install: <code>npm install --save yarn-links</code></li>
-<li>Executable: <code>npx yarn-links</code></li>
-<li>Import: <code>import * as pkg from ('yarn-links')</code></li>
-<li>Require: <code>const pkg = require('yarn-links')</code></li>
-</ul>
-
+# Yarn
+$ yarn add yarn-links
+```
 <!-- /INSTALL -->
 
-
-## CLI Usage
+# CLI Usage
 
 ```bash
 $ yarn-links
@@ -52,7 +38,7 @@ $ yarn-links
   - npm-name-cli
 ```
 
-## API Usage
+# API Usage
 
 ```js
 const yarnLinks = require('yarn-links')
@@ -62,15 +48,13 @@ const links = await yarnLinks()
 ```
 
 <!-- LICENSE/ -->
-
-<h2>License</h2>
+# License
 
 Unless stated otherwise all works are:
 
-<ul><li>Copyright &copy; Sebastian Landwehr</li></ul>
+Copyright &copy; Sebastian Landwehr <info@dword-design.de>
 
 and licensed under:
 
-<ul><li><a href="http://spdx.org/licenses/MIT.html">MIT License</a></li></ul>
-
+[MIT License](https://opensource.org/licenses/MIT)
 <!-- /LICENSE -->
