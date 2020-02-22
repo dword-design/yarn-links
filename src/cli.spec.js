@@ -14,19 +14,19 @@ export default {
       'package-b/package.json': JSON.stringify({ name: '@vendor/package-b' }),
     })
     await Promise.all([
-      await execa.command('yarn link', { cwd: 'package-a' }),
-      await execa.command('yarn link', { cwd: 'package-b' }),
+      execa.command('yarn link', { cwd: 'package-a' }),
+      execa.command('yarn link', { cwd: 'package-b' }),
     ])
     try {
-      const { all } = await execa.command('yarn-links', { stdio: 'inherit' })
+      const { all } = await execa.command('yarn-links', { all: true })
       expect(all).toEqual(endent`
         - @vendor/package-b
         - package-a
       `)
     } finally {
       await Promise.all([
-        execa.command('yarn unlink', { cwd: 'package-a', stdio: 'inherit' }),
-        execa.command('yarn unlink', { cwd: 'package-b', stdio: 'inherit' }),
+        execa.command('yarn unlink', { cwd: 'package-a' }),
+        execa.command('yarn unlink', { cwd: 'package-b' }),
       ])
     }
   }),
