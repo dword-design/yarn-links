@@ -1,35 +1,33 @@
-import userHome from 'user-home'
+import withLocalTmpDir from 'with-local-tmp-dir'
 import execa from 'execa'
-import { remove } from 'fs-extra'
 import outputFiles from 'output-files'
-import P from 'path'
+import { endent } from '@dword-design/functions'
 
 export default {
   empty: async () => {
     const { all } = await execa.command('yarn-links', { all: true })
     expect(all).toEqual('')
   },
-  'two links': async () => {
-    await outputFiles(userHome, {
+  'two links': () => withLocalTmpDir(async () => {
+    await outputFiles({
       'package-a/package.json': JSON.stringify({ name: 'package-a' }),
       'package-b/package.json': JSON.stringify({ name: '@vendor/package-b' }),
     })
-    await execa.command('yarn link', { cwd: P.resolve(userHome, 'package-a') })
-    await execa.command('yarn link', { cwd: P.resolve(userHome, 'package-b') })
+    await Promise.all([
+      await execa.command('yarn link', { cwd: 'package-a' }),
+      await execa.command('yarn link', { cwd: 'package-b' }),
+    ])
     try {
-      const { all } = await execa.command('yarn-links', { all: true })
-      expect(all).toEqual('  - @vendor/package-b\n  - package-a')
+      const { all } = await execa.command('yarn-links', { stdio: 'inherit' })
+      expect(all).toEqual(endent`
+        - @vendor/package-b
+        - package-a
+      `)
     } finally {
       await Promise.all([
-        (async () => {
-          await execa.command('yarn unlink', { cwd: P.resolve(userHome, 'package-a') })
-          await remove(P.resolve(userHome, 'package-a'))
-        })(),
-        (async () => {
-          await execa.command('yarn unlink', { cwd: P.resolve(userHome, 'package-b') })
-          await remove(P.resolve(userHome, 'package-b'))
-        })(),
+        execa.command('yarn unlink', { cwd: 'package-a', stdio: 'inherit' }),
+        execa.command('yarn unlink', { cwd: 'package-b', stdio: 'inherit' }),
       ])
     }
-  },
+  }),
 }
