@@ -1,11 +1,13 @@
 #!/usr/bin/env node
 
-import api from '.'
-import { map, join } from '@dword-design/functions'
+import { join, map } from '@dword-design/functions'
 
-(async () => {
+import api from '.'
+
+const run = async () => {
   const links = await api()
   if (links.length > 0) {
     console.log(links |> map(link => `  - ${link}`) |> join('\n'))
   }
-})()
+}
+run()
