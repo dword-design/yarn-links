@@ -17,11 +17,8 @@ export default {
       try {
         expect(await self()).toEqual(['@vendor/package-b', 'package-a'])
       } finally {
-        // Currently doesn't work in GitHub Actions
-        // await Promise.all([
-        //   execa.command('yarn unlink', { cwd: 'package-a' }),
-        //   execa.command('yarn unlink', { cwd: 'package-b' }),
-        // ])
+        execa.command('yarn unlink', { cwd: 'package-a' })
+        execa.command('yarn unlink', { cwd: 'package-b' })
       }
     }),
 }
