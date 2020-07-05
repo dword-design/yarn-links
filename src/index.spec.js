@@ -1,5 +1,4 @@
 import execa from 'execa'
-import { remove } from 'fs-extra'
 import outputFiles from 'output-files'
 import withLocaltmpDir from 'with-local-tmp-dir'
 
@@ -18,11 +17,11 @@ export default {
       try {
         expect(await self()).toEqual(['@vendor/package-b', 'package-a'])
       } finally {
-        await Promise.all([
-          execa.command('yarn unlink', { cwd: 'package-a' }),
-          execa.command('yarn unlink', { cwd: 'package-b' }),
-        ])
-        await Promise.all([remove('package-b'), remove('package-a')])
+        // Currently doesn't work in GitHub Actions
+        // await Promise.all([
+        //   execa.command('yarn unlink', { cwd: 'package-a' }),
+        //   execa.command('yarn unlink', { cwd: 'package-b' }),
+        // ])
       }
     }),
 }

@@ -1,5 +1,4 @@
 import execa from 'execa'
-import { remove } from 'fs-extra'
 import outputFiles from 'output-files'
 import withLocalTmpDir from 'with-local-tmp-dir'
 
@@ -20,20 +19,11 @@ export default {
         const output = await execa(require.resolve('./cli'), { all: true })
         expect(output.all).toEqual('  - @vendor/package-b\n  - package-a')
       } finally {
-        await Promise.all([
-          (async () => {
-            await execa.command('yarn unlink', {
-              cwd: 'package-a',
-            })
-            await remove('package-a')
-          })(),
-          (async () => {
-            await execa.command('yarn unlink', {
-              cwd: 'package-b',
-            })
-            await remove('package-b')
-          })(),
-        ])
+        // Currently doesn't work in GitHub Actions
+        // await Promise.all([
+        //   execa.command('yarn unlink', { cwd: 'package-a' }),
+        //   execa.command('yarn unlink', { cwd: 'package-b' }),
+        // ])
       }
     }),
 }
