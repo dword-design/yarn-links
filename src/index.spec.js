@@ -24,7 +24,7 @@ export default {
       } finally {
         // yarn unlink currently does not work with GitHub Actions
         await Promise.all([
-          remove(P.join(yarnLinksPath, 'package-a')),
+          remove(P.join(yarnLinksPath, '@vendor')),
           remove(P.join(yarnLinksPath, 'package-b')),
         ])
       }
