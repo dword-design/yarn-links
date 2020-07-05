@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/dword-design/yarn-links/compare/v1.0.1...v1.1.0) (2020-07-05)
+
+
+### Features
+
+* trigger release ([360df1b](https://github.com/dword-design/yarn-links/commit/360df1b572992c18e4ac6832800026c0a506e630))
+
 ## [1.0.1](https://github.com/dword-design/yarn-links/compare/v1.0.0...v1.0.1) (2020-07-05)
 
 
