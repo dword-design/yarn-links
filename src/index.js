@@ -9,11 +9,14 @@ import {
 import { lstat, readJson, realpath } from 'fs-extra'
 import globby from 'globby'
 import P from 'path'
-import getYarnPrefix from 'yarn-config-directory'
+
+import yarnLinksPath from './yarn-links-path'
 
 export default async () => {
   const candidates =
-    globby(`${getYarnPrefix()}/**`, {
+    globby('**', {
+      absolute: true,
+      cwd: yarnLinksPath,
       onlyDirectories: true,
     })
     |> await

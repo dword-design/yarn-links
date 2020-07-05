@@ -2,30 +2,31 @@ import execa from 'execa'
 import { remove } from 'fs-extra'
 import outputFiles from 'output-files'
 import P from 'path'
-import userHome from 'user-home'
+import withLocaltmpDir from 'with-local-tmp-dir'
 
 import self from '.'
+import yarnLinksPath from './yarn-links-path'
 
 export default {
   empty: async () => expect(await self()).toEqual([]),
-  'two links': async () => {
-    await outputFiles(userHome, {
-      'package-a/package.json': JSON.stringify({ name: 'package-a' }),
-      'package-b/package.json': JSON.stringify({ name: '@vendor/package-b' }),
-    })
-    await execa.command('yarn link', { cwd: `${userHome}/package-a` })
-    await execa.command('yarn link', { cwd: `${userHome}/package-b` })
-    try {
-      expect(await self()).toEqual(['@vendor/package-b', 'package-a'])
-    } finally {
+  'two links': () =>
+    withLocaltmpDir(async () => {
+      await outputFiles({
+        'package-a/package.json': JSON.stringify({ name: 'package-a' }),
+        'package-b/package.json': JSON.stringify({ name: '@vendor/package-b' }),
+      })
       await Promise.all([
-        execa.command('yarn unlink', { cwd: P.resolve(userHome, 'package-a') }),
-        execa.command('yarn unlink', { cwd: P.resolve(userHome, 'package-b') }),
+        execa.command('yarn link', { cwd: 'package-a' }),
+        execa.command('yarn link', { cwd: 'package-b' }),
       ])
-      await Promise.all([
-        remove(P.resolve(userHome, 'package-b')),
-        remove(P.resolve(userHome, 'package-a')),
-      ])
-    }
-  },
+      try {
+        expect(await self()).toEqual(['@vendor/package-b', 'package-a'])
+      } finally {
+        // yarn unlink currently does not work with GitHub Actions
+        await Promise.all([
+          remove(P.join(yarnLinksPath, '@vendor')),
+          remove(P.join(yarnLinksPath, 'package-a')),
+        ])
+      }
+    }),
 }
