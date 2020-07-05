@@ -13,7 +13,9 @@ import getYarnPrefix from 'yarn-config-directory'
 
 export default async () => {
   const candidates =
-    globby(`${getYarnPrefix()}/**`, {
+    globby('**', {
+      absolute: true,
+      cwd: P.join(getYarnPrefix(), 'link'),
       onlyDirectories: true,
     })
     |> await
