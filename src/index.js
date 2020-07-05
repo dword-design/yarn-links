@@ -7,15 +7,21 @@ import {
   unary,
 } from '@dword-design/functions'
 import { lstat, readJson, realpath } from 'fs-extra'
+import globalDirs from 'global-dirs'
 import globby from 'globby'
 import P from 'path'
-import getYarnPrefix from 'yarn-config-directory'
+import yarnConfigDirectory from 'yarn-config-directory'
 
 export default async () => {
   const candidates =
     globby('**', {
       absolute: true,
-      cwd: P.join(getYarnPrefix(), 'link'),
+      cwd: P.join(
+        process.platform === 'win32'
+          ? P.resolve(globalDirs.yarn.packages, '..', '..')
+          : yarnConfigDirectory(),
+        'link'
+      ),
       onlyDirectories: true,
     })
     |> await
