@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/dword-design/yarn-links/compare/v1.0.0...v1.0.1) (2020-07-05)
+
+
+### Bug Fixes
+
+* fix package version ([3ee65c8](https://github.com/dword-design/yarn-links/commit/3ee65c816c3a2bdae9b57a1f071b4063f199f039))
+
 # 1.0.0 (2020-07-05)
 
 
