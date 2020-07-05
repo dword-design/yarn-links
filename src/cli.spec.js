@@ -19,8 +19,11 @@ export default {
         const output = await execa(require.resolve('./cli'), { all: true })
         expect(output.all).toEqual('  - @vendor/package-b\n  - package-a')
       } finally {
-        execa.command('yarn unlink', { cwd: 'package-a' })
-        execa.command('yarn unlink', { cwd: 'package-b' })
+        // Currently doesn't work in GitHub Actions
+        // await Promise.all([
+        //   execa.command('yarn unlink', { cwd: 'package-a' }),
+        //   execa.command('yarn unlink', { cwd: 'package-b' }),
+        // ])
       }
     }),
 }
