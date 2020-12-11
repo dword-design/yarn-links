@@ -1,3 +1,11 @@
+## [1.1.1](https://github.com/dword-design/yarn-links/compare/v1.1.0...v1.1.1) (2020-12-11)
+
+
+### Bug Fixes
+
+* upgrades ([74c42e3](https://github.com/dword-design/yarn-links/commit/74c42e3e3303cc5142292277e5712daa5c215c5d))
+* **deps:** update dependency execa to v5 ([535b7d7](https://github.com/dword-design/yarn-links/commit/535b7d7f2b6e15a80f157c52848b1eceb9bf50f4))
+
 # [1.1.0](https://github.com/dword-design/yarn-links/compare/v1.0.1...v1.1.0) (2020-07-05)
 
 
