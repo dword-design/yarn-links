@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/dword-design/yarn-links/compare/v1.1.1...v1.1.2) (2021-02-15)
+
+
+### Bug Fixes
+
+* **deps:** update dependency global-dirs to v3 ([#19](https://github.com/dword-design/yarn-links/issues/19)) ([10cde3a](https://github.com/dword-design/yarn-links/commit/10cde3a846720ac5d1abedc7ec6ee54ba6cfb4f8))
+
 ## [1.1.1](https://github.com/dword-design/yarn-links/compare/v1.1.0...v1.1.1) (2020-12-11)
 
 
