@@ -1,3 +1,10 @@
+## [1.1.5](https://github.com/dword-design/yarn-links/compare/v1.1.4...v1.1.5) (2021-03-23)
+
+
+### Bug Fixes
+
+* update dependency @dword-design/functions to v3 ([#26](https://github.com/dword-design/yarn-links/issues/26)) ([eae344c](https://github.com/dword-design/yarn-links/commit/eae344c1f70539778c2abf305dbe6f4f6f6df089))
+
 ## [1.1.4](https://github.com/dword-design/yarn-links/compare/v1.1.3...v1.1.4) (2021-03-09)
 
 
