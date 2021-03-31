@@ -1,10 +1,8 @@
-import globalDirs from 'global-dirs'
+import execa from 'execa'
 import P from 'path'
-import yarnConfigDirectory from 'yarn-config-directory'
 
-export default P.join(
-  process.platform === 'win32'
-    ? P.resolve(globalDirs.yarn.packages, '..', '..')
-    : yarnConfigDirectory(),
+export default P.resolve(
+  execa.commandSync('yarn global dir').stdout,
+  '..',
   'link'
 )
