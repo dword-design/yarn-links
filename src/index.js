@@ -28,7 +28,7 @@ export default async () => {
       (lstat(candidate) |> await).isSymbolicLink()
     )
     |> await
-  
+
   const packagePaths = symlinks |> map(unary(realpath)) |> promiseAll |> await
 
   const packageJsons =
