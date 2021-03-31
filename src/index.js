@@ -13,10 +13,12 @@ import P from 'path'
 import yarnLinksPath from './yarn-links-path'
 
 export default async () => {
+  console.log(yarnLinksPath)
+
   const candidates =
     globby('**', {
       absolute: true,
-      cwd: yarnLinksPath,
+      cwd: await yarnLinksPath(),
       onlyDirectories: true,
     })
     |> await
@@ -28,6 +30,14 @@ export default async () => {
       (lstat(candidate) |> await).isSymbolicLink()
     )
     |> await
+  console.log(
+    await globby('**', {
+      cwd: yarnLinksPath,
+      onlyFiles: false,
+    })
+  )
+  console.log(candidates)
+  console.log(symlinks)
 
   const packagePaths = symlinks |> map(unary(realpath)) |> promiseAll |> await
 
