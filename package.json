@@ -12,6 +12,7 @@
     "yarn"
   ],
   "repository": "dword-design/yarn-links",
+  "funding": "https://www.buymeacoffee.com/dword",
   "license": "MIT",
   "author": "Sebastian Landwehr <info@dword-design.de>",
   "main": "dist/index.js",
@@ -22,7 +23,7 @@
     "dist"
   ],
   "scripts": {
-    "check-unknown-files": "base check-unknown-files",
+    "checkUnknownFiles": "base checkUnknownFiles",
     "commit": "base commit",
     "dev": "base dev",
     "lint": "base lint",
