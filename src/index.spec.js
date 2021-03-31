@@ -1,5 +1,4 @@
 import execa from 'execa'
-import { readlink, remove } from 'fs-extra'
 import globby from 'globby'
 import outputFiles from 'output-files'
 import P from 'path'
@@ -13,19 +12,13 @@ export default {
   'two links': () =>
     withLocaltmpDir(async () => {
       await outputFiles({
-        foo: {},
-        'package-a': {
-          'index.js': '',
-          'package.json': JSON.stringify({ name: 'package-a' }),
-        },
+        'package-a/package.json': JSON.stringify({ name: 'package-a' }),
         'package-b/package.json': JSON.stringify({ name: '@vendor/package-b' }),
       })
       await Promise.all([
         execa.command('yarn link', { cwd: 'package-a' }),
         execa.command('yarn link', { cwd: 'package-b' }),
       ])
-      process.chdir('foo')
-      await execa.command('yarn init -y')
       try {
         expect(await self()).toEqual(['@vendor/package-b', 'package-a'])
       } finally {
