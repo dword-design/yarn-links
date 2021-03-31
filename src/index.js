@@ -16,7 +16,7 @@ export default async () => {
   const candidates =
     globby('**', {
       absolute: true,
-      cwd: await yarnLinksPath(),
+      cwd: yarnLinksPath,
       onlyDirectories: true,
     })
     |> await
