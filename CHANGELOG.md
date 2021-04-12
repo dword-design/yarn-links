@@ -1,3 +1,10 @@
+## [1.1.6](https://github.com/dword-design/yarn-links/compare/v1.1.5...v1.1.6) (2021-04-12)
+
+
+### Bug Fixes
+
+* lock file maintenance ([#28](https://github.com/dword-design/yarn-links/issues/28)) ([cc5b90d](https://github.com/dword-design/yarn-links/commit/cc5b90db5fb4758778eef1da609361b5851fdace))
+
 ## [1.1.5](https://github.com/dword-design/yarn-links/compare/v1.1.4...v1.1.5) (2021-03-23)
 
 
