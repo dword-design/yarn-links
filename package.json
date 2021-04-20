@@ -6,6 +6,7 @@
     "api",
     "cli",
     "command",
+    "command-line-tool",
     "config",
     "global",
     "link",
