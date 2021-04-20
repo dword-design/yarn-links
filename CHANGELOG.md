@@ -1,3 +1,10 @@
+## [1.1.7](https://github.com/dword-design/yarn-links/compare/v1.1.6...v1.1.7) (2021-04-20)
+
+
+### Bug Fixes
+
+* updated package.json[keywords] ([#33](https://github.com/dword-design/yarn-links/issues/33)) ([ea5febf](https://github.com/dword-design/yarn-links/commit/ea5febf242cdbf401751bbb14fd27985379cab1a))
+
 ## [1.1.6](https://github.com/dword-design/yarn-links/compare/v1.1.5...v1.1.6) (2021-04-12)
 
 
