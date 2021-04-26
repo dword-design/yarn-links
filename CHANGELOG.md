@@ -1,3 +1,10 @@
+## [1.1.8](https://github.com/dword-design/yarn-links/compare/v1.1.7...v1.1.8) (2021-04-26)
+
+
+### Bug Fixes
+
+* update dependency with-local-tmp-dir to v3 ([#34](https://github.com/dword-design/yarn-links/issues/34)) ([23bbb1c](https://github.com/dword-design/yarn-links/commit/23bbb1c23b47910c4eef381a95defd65ddd548a5))
+
 ## [1.1.7](https://github.com/dword-design/yarn-links/compare/v1.1.6...v1.1.7) (2021-04-20)
 
 
