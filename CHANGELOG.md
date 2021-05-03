@@ -1,3 +1,13 @@
+## [2.0.1](https://github.com/dword-design/yarn-links/compare/v2.0.0...v2.0.1) (2021-05-03)
+
+
+### Bug Fixes
+
+* update dependency @dword-design/functions to v4 ([#38](https://github.com/dword-design/yarn-links/issues/38)) ([58c2005](https://github.com/dword-design/yarn-links/commit/58c20050d4e4492c19833428aad3647cd34569c9))
+* update dependency fs-extra to v10 ([#39](https://github.com/dword-design/yarn-links/issues/39)) ([ca57fef](https://github.com/dword-design/yarn-links/commit/ca57fefe88ad93519fa94f98d5ef71469ed496d6))
+* update dependency output-files to v2 ([#40](https://github.com/dword-design/yarn-links/issues/40)) ([876c7d0](https://github.com/dword-design/yarn-links/commit/876c7d0edc110463d541ae7f5d3d743eba2d42aa))
+* update dependency with-local-tmp-dir to v4 ([#41](https://github.com/dword-design/yarn-links/issues/41)) ([654a71f](https://github.com/dword-design/yarn-links/commit/654a71fe6484fb1c5737001fd28fd81a1643615c))
+
 # [2.0.0](https://github.com/dword-design/yarn-links/compare/v1.1.8...v2.0.0) (2021-05-03)
 
 
