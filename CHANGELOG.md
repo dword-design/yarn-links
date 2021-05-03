@@ -1,3 +1,19 @@
+# [2.0.0](https://github.com/dword-design/yarn-links/compare/v1.1.8...v2.0.0) (2021-05-03)
+
+
+### Bug Fixes
+
+* update dependency @dword-design/base to v8 ([#37](https://github.com/dword-design/yarn-links/issues/37)) ([831f553](https://github.com/dword-design/yarn-links/commit/831f5537106e5ade111eb1004736b934574f5208))
+
+
+### BREAKING CHANGES
+
+* require Node.js >= 12
+
+Co-authored-by: Renovate Bot <bot@renovateapp.com>
+Co-authored-by: Sebastian Landwehr <info@dword-design.de>
+Co-authored-by: GitHub Actions <actions@github.com>
+
 ## [1.1.8](https://github.com/dword-design/yarn-links/compare/v1.1.7...v1.1.8) (2021-04-26)
 
 
