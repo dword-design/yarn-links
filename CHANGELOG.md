@@ -1,3 +1,10 @@
+## [2.0.6](https://github.com/dword-design/yarn-links/compare/v2.0.5...v2.0.6) (2022-01-04)
+
+
+### Bug Fixes
+
+* update config files ([b201bdb](https://github.com/dword-design/yarn-links/commit/b201bdb467581ac3dc2923d3b580d138f5f61b83))
+
 ## [2.0.5](https://github.com/dword-design/yarn-links/compare/v2.0.4...v2.0.5) (2021-07-20)
 
 
