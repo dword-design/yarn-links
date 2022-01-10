@@ -4,7 +4,7 @@
 
 
 <!-- BADGES/ -->
-<p>
+  <p>
     <a href="https://npmjs.org/package/yarn-links">
       <img
         src="https://img.shields.io/npm/v/yarn-links.svg"
