@@ -1,9 +1,9 @@
-import execa from 'execa'
+import { execaCommand } from 'execa'
 import outputFiles from 'output-files'
 import processOnSpawn from 'process-on-spawn'
 import withLocaltmpDir from 'with-local-tmp-dir'
 
-import self from '.'
+import self from './index.js'
 
 export default {
   empty: async () => expect(await self()).toEqual([]),
@@ -17,16 +17,16 @@ export default {
       const removeSpawnWrap = opts => (opts.env.NODE_OPTIONS = '')
       processOnSpawn.addListener(removeSpawnWrap)
       await Promise.all([
-        execa.command('yarn link', { cwd: 'package-a' }),
-        execa.command('yarn link', { cwd: 'package-b' }),
+        execaCommand('yarn link', { cwd: 'package-a' }),
+        execaCommand('yarn link', { cwd: 'package-b' }),
       ])
       processOnSpawn.removeListener(removeSpawnWrap)
       try {
         expect(await self()).toEqual(['@vendor/package-b', 'package-a'])
       } finally {
         await Promise.all([
-          execa.command('yarn unlink', { cwd: 'package-a' }),
-          execa.command('yarn unlink', { cwd: 'package-b' }),
+          execaCommand('yarn unlink', { cwd: 'package-a' }),
+          execaCommand('yarn unlink', { cwd: 'package-b' }),
         ])
       }
     }),

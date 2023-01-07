@@ -1,11 +1,13 @@
-import execa from 'execa'
+import { execa, execaCommand } from 'execa'
+import { createRequire } from 'module'
 import outputFiles from 'output-files'
-import processOnSpawn from 'process-on-spawn'
 import withLocalTmpDir from 'with-local-tmp-dir'
+
+const _require = createRequire(import.meta.url)
 
 export default {
   empty: async () => {
-    const output = await execa(require.resolve('./cli'), { all: true })
+    const output = await execa(_require.resolve('./cli.js'), { all: true })
     expect(output.stdout).toEqual('')
   },
   valid: () =>
@@ -13,22 +15,19 @@ export default {
       await outputFiles({
         'package-a/package.json': JSON.stringify({ name: 'package-a' }),
         'package-b/package.json': JSON.stringify({ name: '@vendor/package-b' }),
+        'package.json': JSON.stringify({ type: 'module' }),
       })
-
-      const removeSpawnWrap = opts => (opts.env.NODE_OPTIONS = '')
-      processOnSpawn.addListener(removeSpawnWrap)
       await Promise.all([
-        execa.command('yarn link', { cwd: 'package-a' }),
-        execa.command('yarn link', { cwd: 'package-b' }),
+        execaCommand('yarn link', { cwd: 'package-a' }),
+        execaCommand('yarn link', { cwd: 'package-b' }),
       ])
-      processOnSpawn.removeListener(removeSpawnWrap)
       try {
-        const output = await execa(require.resolve('./cli'), { all: true })
+        const output = await execa(_require.resolve('./cli.js'), { all: true })
         expect(output.all).toEqual('  - @vendor/package-b\n  - package-a')
       } finally {
         await Promise.all([
-          execa.command('yarn unlink', { cwd: 'package-a' }),
-          execa.command('yarn unlink', { cwd: 'package-b' }),
+          execaCommand('yarn unlink', { cwd: 'package-a' }),
+          execaCommand('yarn unlink', { cwd: 'package-b' }),
         ])
       }
     }),

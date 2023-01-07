@@ -2,7 +2,7 @@
 
 import { join, map } from '@dword-design/functions'
 
-import api from '.'
+import api from './index.js'
 
 const run = async () => {
   const links = await api()
