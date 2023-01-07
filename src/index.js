@@ -6,11 +6,11 @@ import {
   sortBy,
   unary,
 } from '@dword-design/functions'
-import { lstat, readJson, realpath } from 'fs-extra'
-import globby from 'globby'
+import fs from 'fs-extra'
+import { globby } from 'globby'
 import P from 'path'
 
-import yarnLinksPath from './yarn-links-path'
+import yarnLinksPath from './yarn-links-path.js'
 
 export default async () => {
   const candidates =
@@ -25,16 +25,18 @@ export default async () => {
   const symlinks =
     candidates
     |> filterAsync(async candidate =>
-      (lstat(candidate) |> await).isSymbolicLink()
+      (fs.lstat(candidate) |> await).isSymbolicLink()
     )
     |> await
 
-  const packagePaths = symlinks |> map(unary(realpath)) |> promiseAll |> await
+  const packagePaths =
+    symlinks |> map(unary(fs.realpath)) |> promiseAll |> await
 
   const packageJsons =
     packagePaths |> map(path => P.resolve(path, 'package.json'))
 
-  const packages = packageJsons |> map(unary(readJson)) |> promiseAll |> await
+  const packages =
+    packageJsons |> map(unary(fs.readJson)) |> promiseAll |> await
 
   return packages |> map('name')
 }
