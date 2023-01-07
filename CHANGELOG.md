@@ -1,3 +1,15 @@
+# [3.0.0](https://github.com/dword-design/yarn-links/compare/v2.0.7...v3.0.0) (2023-01-07)
+
+
+### Bug Fixes
+
+* lock file maintenance ([#99](https://github.com/dword-design/yarn-links/issues/99)) ([68a2ab5](https://github.com/dword-design/yarn-links/commit/68a2ab5b449b6a770d0c93a95b5dbb29ec9ec36e))
+
+
+### BREAKING CHANGES
+
+* Drop Node 12 support, move to ESM
+
 ## [2.0.7](https://github.com/dword-design/yarn-links/compare/v2.0.6...v2.0.7) (2022-01-12)
 
 

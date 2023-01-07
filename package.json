@@ -1,6 +1,6 @@
 {
   "name": "yarn-links",
-  "version": "2.0.7",
+  "version": "3.0.0",
   "description": "This package outputs all linked yarn packages via the CLI or via an exported function.",
   "keywords": [
     "api",
