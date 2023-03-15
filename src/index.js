@@ -25,7 +25,7 @@ export default async () => {
   const symlinks =
     candidates
     |> filterAsync(async candidate =>
-      (fs.lstat(candidate) |> await).isSymbolicLink()
+      (fs.lstat(candidate) |> await).isSymbolicLink(),
     )
     |> await
 
