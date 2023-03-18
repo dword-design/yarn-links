@@ -1,3 +1,10 @@
+## [3.0.4](https://github.com/dword-design/yarn-links/compare/v3.0.3...v3.0.4) (2023-03-18)
+
+
+### Bug Fixes
+
+* update dependency output-files to v2.0.14 ([32bf8ea](https://github.com/dword-design/yarn-links/commit/32bf8eac675c8c78a5ae717e0e26c47d5288ea34))
+
 ## [3.0.3](https://github.com/dword-design/yarn-links/compare/v3.0.2...v3.0.3) (2023-03-16)
 
 
