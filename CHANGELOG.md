@@ -1,3 +1,10 @@
+## [3.0.10](https://github.com/dword-design/yarn-links/compare/v3.0.9...v3.0.10) (2023-04-09)
+
+
+### Bug Fixes
+
+* lock file maintenance ([#105](https://github.com/dword-design/yarn-links/issues/105)) ([78b9214](https://github.com/dword-design/yarn-links/commit/78b92143ff041c5dc6f3bd5d863667f15dd522da))
+
 ## [3.0.9](https://github.com/dword-design/yarn-links/compare/v3.0.8...v3.0.9) (2023-03-21)
 
 
