@@ -1,3 +1,10 @@
+## [3.0.15](https://github.com/dword-design/yarn-links/compare/v3.0.14...v3.0.15) (2023-04-11)
+
+
+### Bug Fixes
+
+* update dependency globby to v13.1.4 ([f03ab7e](https://github.com/dword-design/yarn-links/commit/f03ab7ef7536e0e244bbefe3ce434b1014ac0ad2))
+
 ## [3.0.14](https://github.com/dword-design/yarn-links/compare/v3.0.13...v3.0.14) (2023-04-11)
 
 
